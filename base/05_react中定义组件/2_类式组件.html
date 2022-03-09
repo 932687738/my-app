@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-9">
-    <title>函数式组件</title>
+    <title>类式组件</title>
 </head>
 
 <body>
@@ -11,9 +11,12 @@
     <script type="text/javascript" src="../js/react-dom.development.js"></script>
     <script type="text/javascript" src="../js/babel.min.js"></script>
     <script type="text/babel">
-        function MyComponent(){
-            return <h2>我是用函数定义的组件(适用于【简单组件)的定义</h2>
-        }
+       class MyComponent extends React.Component {
+           render(){
+               console.log('render中的this:',this);
+               return <h2>我是用类定义的组件(适用于【复杂组件】的定义)</h2>
+           }
+       }
 
         ReactDOM.render(<MyComponent/>,document.getElementById("test"))
     </script>
