@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-9">
+    <title>createRef</title>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component{
+            myRef = React.createRef()
+            clickShowDate = () =>{
+                alert(this.myRef.current.value)
+            }
+            render(){
+                return (
+                    <div>
+                        <input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>
+                        <button onClick={this.clickShowDate}>点击提示左侧数据</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Demo/>,document.getElementById("test"))
+    </script>
+</body>
+</html>
