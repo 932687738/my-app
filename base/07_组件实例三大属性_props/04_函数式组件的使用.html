@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-9">
-    <title>props的简写方式</title>
+    <title>函数式组件的使用方式</title>
 </head>
 
 <body>
@@ -13,32 +13,17 @@
     <script type="text/javascript" src="../js/babel.min.js"></script>
     <script type="text/javascript" src="../js/prop-types.js"></script>
     <script type="text/babel">
-        class Demo extends React.Component{
-
-            static propTypes = {
-                name:PropTypes.string.isRequired,
-                sex:PropTypes.string,
-                age:PropTypes.number,
-                speak:PropTypes.func
-            }
-            static defaultProps = {
-                sex:"male",
-                age:16
-            }
-            render(){
-                const {name,age,sex} = this.props
-                return (
+        function Demo(props){
+            return (
                     <ul>
-                        <li>姓名：{name}</li>
-                        <li>年龄：{age}</li>
-                        <li>性别：{sex}</li>
+                        <li>姓名：{props.name}</li>
+                        <li>年龄：{props.age}</li>
+                        <li>性别：{props.sex}</li>
                     </ul>
                 )
-            }
         }
-        
         const p = {name:"dzj"}
-        
+    
         ReactDOM.render(<Demo {...p}/>,document.getElementById("test"))
     </script>
 </body>
