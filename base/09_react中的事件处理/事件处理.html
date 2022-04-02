@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-9">
+    <title>时间处理</title>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+       class Demo extends React.Component{
+           myRef = React.createRef()
+           myRef2 = React.createRef()
+
+           showData = (event) => {
+               alert(this.myRef.current.value)
+           }
+
+           showData2 = (event) => {
+               alert(event.target.value)
+           }
+
+           render(){
+               return(
+                   <div>
+                        <input ref={this.myRef} type="text" placeholder="点击按钮弹窗"/>&nbsp;
+                        <button onClick={this.showData}>点我提示左侧数据</button>&nbsp;
+                        <input onBlur={this.showData2} type="text" placeholder="拾取焦点提示数据"/>
+                    </div>
+               )
+           }
+       }
+       ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById("test"))
+    </script>
+</body>
+</html>
