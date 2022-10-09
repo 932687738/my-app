@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        // 配置@替换/快捷提示包路径，配合craco
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
+    }
+}
