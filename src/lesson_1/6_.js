@@ -1,0 +1,1 @@
+var a_target = document.querySelector("a");  //选择a标签

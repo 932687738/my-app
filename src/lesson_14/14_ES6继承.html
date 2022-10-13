@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5
+        //组合继承 ： call prototype
+        // function Person(name){
+        //     this.name = name;
+        // }
+
+        // Person.ins = "abc";
+
+        // function Black(name){
+        //     //继承属性
+        //     Person.call(this,name);
+        // }
+
+        // //继承方法
+        // Black.prototype = Object.create(Person.prototype);
+        // //构建者指定好了
+        // Black.prototype.constructor = Black;
+
+        // var b1 = new Black("a");
+        // var p1 = new Person("b");
+
+        // console.log(b1,p1);
+        // console.log(Black.ins);
+
+    </script>
+    <script>
+        //ES6
+        class Person{
+            //静态属性或静态方法是不能被继承的
+            static ins1 = 123;
+
+            constructor(name){
+                this.name = name;
+            }
+
+            action(){
+                return 1
+            }
+        }
+
+        //类Black继承Person(继承原型)
+        class Black extends Person{
+            constructor(name){
+                //继承属性
+                super(name);
+            }
+        }
+
+        let b1 = new Black("abc");
+        console.log(b1);
+        console.log(b1.action());
+        console.log(Black.ins1);
+    </script>
+</body>
+</html>

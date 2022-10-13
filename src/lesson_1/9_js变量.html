@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        "use strict"
+        /*
+            变量 : 代名词
+            a = 1;
+            b = 2;
+
+            常量 : pi 3.1415  e 2.718  (es6)
+        */
+
+        // //声明一个变量
+        // var a;
+        // console.log('---->',a); //undefined:未定义
+        // //赋值
+        // a = 1;
+        // console.log('====>',a);
+
+        // a = "张三";
+        // console.log(a);
+
+
+        //如果变量没有被声明过，在ES5的debug功能当中是找不到变量的
+        /*
+            ES5的声明提升(变量提升)语法：
+            var写在赋值的后面,js的语法会自动的把var提升的最前方
+            var a;
+            a = 1;
+
+            use strict : 使用严格模式
+            var 不能不加
+        */
+        
+        a = 1;
+        var a;
+        console.log(a);
+
+
+    </script>
+</body>
+</html>

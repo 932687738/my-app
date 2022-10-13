@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //语法糖 : 有些语法写的特别复杂,于是做简化,简化的使用称之为语法糖
+        // function Person(name){
+        //     if(this instanceof Person){
+        //         this.name = name;
+        //     }else{
+        //         return new Person(name);
+        //     }
+        // }
+
+        // //私有属性
+        // Person.ins = null;
+
+        // //原型对象
+        // Person.prototype.action = function(){
+
+        // }
+
+    </script>
+
+    <script>
+        //类对象
+        class Person{
+            //私有属性(静态属性)只能被类对象调用
+            //当检测static 自动剥离
+            static ins = null;
+
+            //不允许加上function关键字
+            constructor(name){//constructor构造方法
+                this.name = name;
+                //除了当前的作用域属于函数对象
+            }
+
+            //其它的作用域都是原型对象对象
+            action(){
+
+            }
+        }
+
+        //实例对象
+        let p1 = new Person("abc");
+        console.log(p1);
+
+    </script>
+</body>
+</html>

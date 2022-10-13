@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Map : 映射
+        /*
+            Map和Object相似
+                - 都是键值对
+                - Map和Object最大差距就是,什么东西都可以当键
+        */
+        let m = new Map();
+
+        //    console.log(m);
+
+        //添加属性了,但是没有给map添加键值对
+        //    m.name = 123;    
+        //    m["age"] = 123;
+
+        //set才能设置值
+        let a = [];
+        let b = [1, 2, 3];
+
+        m.set(a, "男");
+        m.set(b, "飞");
+
+        //    console.log(m.size);
+        // console.log(m);
+
+
+        //获取值
+        // console.log(m.get(a));
+
+        //一次型清空
+        // m.clear();
+        // console.log(m);
+
+        for(let v of m){
+            console.log(v);//[key,val]
+        }
+
+
+
+    </script>
+</body>
+
+</html>

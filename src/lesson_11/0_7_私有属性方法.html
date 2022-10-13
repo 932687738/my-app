@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            设计模式
+                - 单例模式
+                - 当前的函数对象,只能生成一个实例对象(引用对象)
+                - 每生成一个引用对象,会额外多消耗一个空间
+
+                - 比如说我先生成一个实例,然后用完了
+                - 我需要使用另一个实例,属性不相同
+        */
+
+        // function Person(name){
+        //     if(this instanceof Person){
+        //         this.name = name;
+        //     }else{//this->window
+        //         return new Person(name);
+        //     }
+        // }
+
+        // var p1 = Person("张三");
+        // var p2 = Person("张三");
+        // //对象对比比什么,比的是内存编址
+        // console.log(p1 === p2);  //false
+
+    </script>
+
+    <script>
+        function Person(name){
+            //如果当前的Person被实例化过，Person.instance = 实例对象
+            // console.log(Person.instance);
+            if(Person.instance === null){
+                this.name = name;
+                Person.instance = this; 
+            }else{//如果已经被实例化了,则返回被实例化的引用对象
+                Person.instance.name = name;
+                return Person.instance //{name:张三}
+            }
+        }
+        //实例
+        Person.instance = null;
+        //Person.instance = {name:张三}
+
+        var p1 = new Person("张三");
+
+        /*
+            Person.instance = p1
+            p2 = Person.instance
+            p2 = p1
+        */
+        var p2 = new Person("李四"); 
+        var p3 = new Person("王五");
+
+
+        // console.log(Person.instance);//null  {name:张三}
+        console.log(p1);  
+
+        /*
+            1.如果当前的函数对象没有实例化,则可以实例
+            2.如果当前的函数对象被实例化过,Person.instance当中有记录,记录的就是第一次实例化的引用对象
+            3.Person.instance === p1的
+
+            4.如果已经被实例化,
+        
+        
+        */
+    </script>
+</body>
+</html>

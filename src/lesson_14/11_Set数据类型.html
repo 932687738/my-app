@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Set 集合
+        /*
+            set当中的元素不可以出现重复值
+
+            set是有顺序还是没有顺序
+                JS当中的set的底层还是数组
+                在语法控制上设置成无序的用法
+        */
+        
+        let a = [1,2,0,1,0,2,3,3,3,3,3];
+        let s = new Set(a); 
+        // console.log(s);//{1,2,0,3}
+
+
+        // let s1 = {1,2,3,4,5,6};
+        // console.log(s1);
+
+        // for(let v of s){
+        //     console.log(v);
+        // }
+
+        // console.log([...s]);
+
+    </script>
+
+
+    <script>
+        //集合 : 交集?   差集    并集?
+        /*
+            差集 : 
+                天狗电商平台  : 
+                拼刀刀       : 
+        */
+
+        let q = new Set([1,2,3,4,5]);
+        let r = new Set([1,3,5,6,7]);
+
+        console.log([...q].filter((item)=>{//filter把true的结果对应成索引返回
+            //item = 1 2 3 4 5
+            //有没有
+            return !r.has(item);//返回的是bool
+        }));
+        
+
+    </script>
+</body>
+</html>

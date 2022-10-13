@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            [] : 多选1
+            {} : 符号的数量
+                - {9} : 9个长度
+                - {2,9} :最少2位,最长9位
+            .  : 通配符 可以用来来表任意一个字符
+            |  : 或 不可以写在[]当中
+            () : 一个完整体
+
+
+            修饰符：
+                i : ignore 忽略大小写
+        */
+        // var reg = /[12345]$/;
+        // console.log(reg.test("1a1"));
+
+        // var reg = /[A-Za-z0-9_$]/;
+        // console.log(reg.test("$"));
+
+        //手机号验证
+        // var reg = /^1[356789]\d{9}$/;
+        // console.log(reg.test("13812341234"));
+
+        //this_my_eamil  @  163  .com
+        //\w = [A-Za-z0-9_]
+        // var reg = /^\w{6,20}@(163|126|aliyun|qq)(\.)(Com|Cn)/i
+        // console.log(reg.test("this_my_email@qq.cn"));
+
+        // var reg = new RegExp("^\\w{6,20}@(163|126|aliyun|qq)(\\.)(Com|Cn)","i")
+        // console.log(reg.test("this_my_email@qq.cn"));
+
+
+        //qq验证
+
+    </script>
+</body>
+</html>

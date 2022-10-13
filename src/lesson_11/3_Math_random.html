@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机数 : 生成0-1之间的随机浮点数
+        // console.log(Math.random());
+
+        //如何生成随机整数10-100
+
+        Math.randint = function(low,high){
+
+            return Math.floor(Math.random() * (high-low) + low)
+        }
+
+        console.log(Math.randint(10,100));
+
+        //生成一个随机整数数组
+        //数组长度
+        Math.randintArray = function(len,low,high){
+            var arr = [];
+            for(var i=0;i<len;i++){
+                arr.push(Math.floor(Math.random() * (high-low) + low));
+            }
+            return arr;
+        }
+
+        console.log(Math.randintArray(10,1,11));
+
+        
+
+
+
+    </script>
+</body>
+</html>

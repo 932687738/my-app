@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            \  : 转义字符串
+            ^  : 以什么开头(长度固定)
+            $  : 以什么结尾(长度固定)
+            \d : 纯数字(一个\d代表一个数字)
+            \w : 标识符 匹配字母 匹配数字  匹配_
+        */
+        
+        // var reg = new RegExp("^ab");//结尾长度不固定
+        // console.log(reg.test("abb"));//true
+
+        //推荐
+        // var reg = new RegExp("^ab$");//结尾长度固定 2位
+        // console.log(reg.test("abb"));//false
+
+        // var reg = new RegExp("ab$");//开头长度不固定
+        // console.log(reg.test("aab"));
+
+        //数字
+        // var reg = new RegExp("^\\d$");//\\d ->\d
+        // console.log(reg.test("1"));
+
+        //标识符
+        var reg = /\w/;
+        console.log(reg.test("_"));
+
+        
+    </script>
+</body>
+</html>

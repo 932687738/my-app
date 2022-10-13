@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1;
+        console.log(typeof a);
+        console.log(new Number(2));
+
+        //Math是实例对象
+        console.log(Math);
+
+        console.time();
+        //0 0 0 0 0 0 0 1
+        console.log(Math.abs(-100));//绝对值 = 100
+        console.timeEnd();
+
+        console.time();
+        console.log(Math.sqrt(Math.pow(-100,2)));//
+        console.timeEnd();
+
+        //向上取整
+        console.log(Math.ceil(0.123));
+
+        //向下取整
+        console.log(Math.floor(1.123));
+
+        //四舍五入
+        console.log(Math.round(1.45554));
+
+
+        //求最大值
+        console.log(Math.max(1,2,3,4,5));
+        //求最小值
+        console.log(Math.min(1,2,3,4,5));//argments = [1,2,3,4,5]
+
+        
+        console.log(9**0.5)
+
+    </script>
+</body>
+</html>

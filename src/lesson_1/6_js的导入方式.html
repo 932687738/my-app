@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        # 不是空链接
+        # javascript:void(0) 空链接
+        # onclick : 点击事件属性
+    -->
+    <a href="javascript:void(0)" onclick="window.location.href='http://baidu.com'">点击进入百度</a>
+    
+    <!--src : source 资源-->
+    <script src="./6_.js">
+        //引入的js当中写代码时不生效的
+        console.log(111);
+    </script>
+
+    <script>
+        //target : 标签
+        //query(执行查询)Selector(选择)
+        a_target.onclick = function (){
+            window.location.href='http://jd.com';
+        }
+    </script>
+
+    <!--
+        1.行内式
+        2.内嵌式
+        3.外联式
+            - 外联式可以把不同类型的代码放在不同的文件当中,便于管理各类型的代码
+    -->
+</body>
+</html>

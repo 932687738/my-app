@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // var a = "123";
+        // console.log(Number(a)); //123
+
+        // var b = "123a";
+        // //b变量不是纯数字
+        // //Not a Number 
+        // console.log(Number(b)); // NaN(不是一个数字的数字类型)
+        // console.log(typeof NaN); // number
+        // console.log(NaN === NaN); //"123a" === "a123" 
+        // //判断NaN
+        // console.log(isNaN(NaN)); //true
+
+        // var c = null;
+        // console.log(Number(c)); //0
+
+        // var d = undefined;
+        // console.log(Number(d)); //NaN
+
+        // var e = true;
+    //     // console.log(Number(e));  //1
+
+    //     // var f = false;
+    //     // console.log(Number(f));  //0
+
+    </script>
+
+    <script>
+    //     //转换为整数
+    //     //parseInt(解析成整数)
+    //     //parseFloat()
+    //     var a = 123.9;
+    //     console.log(parseInt(a)); //123
+
+
+    //     var b = "123a4";
+    //     /*
+    //         parseInt : 判断当前字符的开头是不是数字
+    //         如果是数字，则向后一位进行判断
+    //         碰到不是数字的部分，停止
+    //         把数字部分转换成数字类型
+
+    //         如果开头是字符，则是""
+    //     */
+    //     console.log(parseInt(b)); //123
+
+    //     var c = "a1234"
+    //     console.log(parseInt(c)); //NaN
+
+
+    //     var d = null;
+    //     /*
+    //         parseInt优先把所有的变量转变为字符串(string)
+    //         "null"
+    //     */
+    //     console.log(parseInt(d)); //NaN
+
+    //     var e = undefined;
+    //     console.log(parseInt(e)); //NaN
+
+    //     var f = true;
+    //     console.log(parseInt(f)); //NaN
+
+    </script>
+
+    <script>
+        //通过运算符强制转换
+        var a = "123";
+
+        //除了+以外的其它运算可以进行数据类型转换
+        //+在字符串当中代表的是拼接字符串
+        console.log(a / 1); // 123
+
+        console.log("今天"+"很热");
+
+    </script>
+</body>
+</html>

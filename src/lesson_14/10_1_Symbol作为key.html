@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let obj = {
+    //         //底层封装当中,生成很多不可修改的数据,都会使用Symbol
+    //         [Symbol("name")]:123456,
+    //         [Symbol("name")]:654321,
+    //         age:123,
+    //         age:234,
+    //     }
+
+    //     // for(let k in obj){
+    //     //     //反射owner Keys
+            
+    //     //     console.log(k);
+    //     // }
+    //    for(var i in Reflect.ownKeys(obj)){
+    //     console.log(Reflect.ownKeys(obj)[i]);
+    //    }
+    </script>
+
+    <script>
+    
+        class Person{
+            //把symbol当作方法的名称
+            //只要使用了instanceof当前当前方法自动触发
+            static [Symbol.hasInstance](param){
+                // console.log("--->",param);
+                return true
+            }
+        }
+
+        let a = {a:1};//Object的引用对象
+
+        console.log(a instanceof Person);//false
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝 : 拷贝传值
+        //基本数据类型
+        // null  undefined 字面量
+        //undefined
+        //true false
+        //"1234556"   123345
+        var a = null;//
+        var b = a;
+        a = undefined;
+
+        console.log(b);
+        //栈 : a=null
+        //包装类 : str.substr() ,js当中有个语法,new String(str)
+
+        // console.log(typeof "123");
+        // console.log(typeof new String("123"));
+
+
+        //引用传编址
+        var arr = [1,2,3,4,5];
+        var array = arr;
+        arr[0] = 123;
+
+        console.log(array); //123
+
+    </script>
+</body>
+</html>

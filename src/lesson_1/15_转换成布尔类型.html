@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var a = 123;
+        console.log(Boolean(a));  //true
+        var b = -123;
+        console.log(Boolean(b));  //true
+        var c = 0;
+        console.log(Boolean(c));  //false 除了0以外的数字都是true
+        var t = Infinity;
+        console.log(Boolean(t));  //true
+        var n = NaN;
+        console.log(Boolean(n));  //false
+        var d = "";
+        console.log(Boolean(d));  //false
+        var e = " ";
+        console.log(Boolean(e));  //true
+        var f = null;
+        console.log(Boolean(f));  //false
+        var g = undefined;
+        console.log(Boolean(g));  //false
+
+    </script>
+</body>
+</html>

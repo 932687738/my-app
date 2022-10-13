@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Symbol是 “特殊” 的字符串类型
+
+        let a = "abc";
+        let b = "abc";
+
+        console.log(a===b); //true
+
+        /*
+            Symbol每次定义字符串的时候,都会生成一个对象
+                - 对象存储再堆当中
+                - c = Symbol的编址
+        */
+        // let c = Symbol("abc");
+        // let d = Symbol("abc");
+
+        // console.log(c===d);//false
+        // console.log(c);
+
+        /*
+            for再堆当中查询有没有那个对象的值是"abc"
+            如果没有,则创建
+            如果有的化,把找到的Symbol编址返回
+        
+        */
+        // let q = Symbol.for("abc"); //创建
+        // let w = Symbol.for("abc"); //没有创建
+
+        // console.log(q===w);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //劫持
+        Object.prototype._apply = function(obj,arr){
+            obj.func = this;
+
+            var str = "obj.func(";
+
+            //劫持 拆解
+            for(var i=0;i<arr.length;i++){
+                str += "'"+arr[i]+"'"+",";
+            }
+            //obj.func(abc,123,456,
+
+            var ind = str.lastIndexOf(",");
+
+            str = str.substring(0,ind)+")";
+
+            //str = "obj.func(abc,123,456)"  -> obj.func(abc,123,456)
+            var res = eval(str);
+
+            
+            delete obj.func
+
+            return res
+        }
+
+        function demo(arg){
+            return [this,arg]
+        }
+
+        var obj = {a:1};
+
+        // console.log(demo());  //window
+
+        console.time();
+        console.log(demo.apply(obj,["abc",123,456]));  //{a:1}
+        console.timeEnd();
+
+        console.time();
+        console.log(demo.call(obj,["abc",123,456])); 
+        console.timeEnd();
+
+
+    </script>
+</body>
+</html>

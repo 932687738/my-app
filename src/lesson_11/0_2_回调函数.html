@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            回调函数
+            - 把一个当作参数传递给另一个函数,作为调用 
+        */
+
+        // var arr = [1,2,3,4]
+        // arr.forEach(function(item){
+        //     console.log(item)
+        // })
+
+        
+        //给str对象
+        String.prototype.forEach = function(callback){
+            for(var i=0;i<this.length;i++){
+                callback(i,this[i]);//
+            }
+        }
+
+        var str = "fiuhsadlkhfhaskd";
+
+        var count = 0;
+        str.forEach(function(index,item){
+            console.log(index,item);
+            count++
+        });
+
+
+
+        
+    </script>
+
+</body>
+</html>

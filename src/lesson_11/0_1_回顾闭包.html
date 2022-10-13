@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            什么是闭包函数?
+            - 函数内部套用函数,把内部函数作为外部函数的返回值
+
+        */
+
+        // function a(arg1){
+        //     function b(arg2){
+        //         return arg1 + arg2
+        //     }
+        //     return b
+        // }
+        // console.log(a(10)(20));
+        
+
+
+        // //闭包
+        // //
+        // function outer(arg1){
+        //     return function(arg2){
+        //         return arg1 + arg2
+        //     }
+        // }
+        // console.log(outer(100)(100));
+
+
+        //
+        // function aa(arg){
+        //     return arg
+        // }
+        // var obj = {};
+
+        // console.log(aa.bind(obj)("abc"));
+    </script>
+
+
+    <script>
+
+        
+        Object.prototype._bind = function(obj){
+            //bind也是借用
+            //改变this的指向
+            // console.log(this);
+
+            //obj当中有个函数的功能 和 aa相同
+            obj.func = this;
+
+            return obj.func
+        }
+
+        function aa(arg){
+            return arg
+        }
+
+        var obj = {};
+        console.log(aa._bind(obj)(100));  //aa函数
+
+        // console.log(obj.func("abc"));
+        
+
+    </script>
+</body>
+</html>

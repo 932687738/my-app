@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            XML  : 数据文件格式(过时了)
+            JSON : 数据文件的格式(主流)
+            - JSON格式对于JavaScript来说就是一组字符串
+        */
+        
+        var json = `[
+            {
+                "name":"张三",
+                "age" :18,
+                "sex":"男"
+            },
+            {
+                "name":"李四",
+                "age" :18,
+                "sex":"男"
+            }
+        ]`
+
+        console.log(typeof json);
+
+        //转换成arr包含obj
+
+        console.log(JSON.parse(json));
+
+        //把数组转变成json
+        var a = [{a:1}];
+        console.log(JSON.stringify(a));
+
+        //引用对象 JS运行的时候,自动实例化
+        console.log(JSON);
+        // console.log(Array)
+
+        /*
+            1.JSON是引用对象
+            2.JSON.stringify : 把数据转成json类型
+            3.JOSON.parse : 把json恢复成原来的类型
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原型对象
+        */
+        //Object
+        console.log(Object.prototype);
+        //继承Object
+        console.log(String.prototype);
+        console.log(Array.prototype);
+
+        //没有也默认继承Object
+        function Person(name){
+            this.name = name;
+        }
+
+        Person.prototype.action = function (){
+            return this
+        }
+
+        var p1 = new Person("张三");
+
+        console.log(p1.action());
+
+
+        function Yellow(name){
+            /*
+                从Person中借用过来的
+            */
+            Person.call(this,name);
+        }
+
+        Yellow.prototype = Object.create(Person.prototype);
+        Yellow.prototype.constructor = Yellow;
+
+        Yellow.prototype.a = function(){
+            return 123;
+        }
+
+        var y1 = new Yellow("李四");
+
+        console.log(y1.action());
+        console.log(y1.a());
+
+        // console.log(p1.a());
+
+        /*
+            查找过程
+                p1查找的方法,优先查找函数对象,如果找不到,找自己的原型对象,找不到,找Object的原型对象,找不到,找到null,报错
+                y1查找的方法,优先查找函数对象,如果找不到,找自己的原型对象,找不到,找p1的原型对象，找不到,找Object的原型对象,找不到,找到null,报错
+        */
+    </script>
+</body>
+</html>

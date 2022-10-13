@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        //函数对象
+        console.log(Date);
+
+        //安全的函数对象
+        console.log(typeof Date());
+
+        console.log(new Date());
+
+        //实例化
+        var date = new Date();
+
+        /*
+            返回时间戳 : 毫秒值(后端语言当中是秒值)
+            1秒 = 1000毫秒
+
+            从英国的格林尼治 1970年1月1日 00：00：00 
+        */
+        // console.log(Date.now()); //now是Date的私有方法
+
+        // var d1 = Date.now();
+        // //延时器
+        // setTimeout(function(){
+        //     var d2 = Date.now();
+        //     console.log(d1<d2);
+        // },3000);//3秒
+
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);
+        console.log(date.getDate()); 
+
+        //西方时间 0是周日 1 2 3 4 5 6
+        console.log(date.getDay());
+
+        console.log(date.getHours());//小时
+        console.log(date.getMinutes());//分钟
+        console.log(date.getSeconds());//秒
+        
+
+        //当前页面刷新才获取
+        console.log(date.toLocaleTimeString());//当前时间的本地格式化字符串
+        console.log(date.toLocaleDateString());//当前日期的本地格式化字符串
+
+        //DOM
+        //把当前的时间打印到h1标签当中
+        var h1= document.querySelector("h1");
+    
+
+        //定时器
+       
+        // setInterval(function(){
+ 
+        //     h1.innerHTML = date.getSeconds()
+        // },1000);//每1秒出发一次
+
+    </script>
+</body>
+</html>

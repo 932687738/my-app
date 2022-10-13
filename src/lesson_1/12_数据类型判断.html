@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //判断数据类型
+        /*
+            判断不同表单传入的数据类型 
+        */
+
+        //数字
+        var a = 123;   //整数
+        var b = 3.14;  //浮点数
+        var c = Infinity //无穷
+
+        //API : 应用接口(工具)
+        //typeof(变量) typeof 变量
+        console.log(typeof(a),typeof b,typeof c);
+
+
+        //字符串
+        var q = '1234567890';
+        var w = "这是第二句话";
+        var e = "\\t一库\\n面对疾风吧"; // \转义 \t:tab  \n:换行
+
+        console.log(typeof q , typeof(w) , typeof e , e);
+
+        //bool
+        var t = true;
+        var f = false;
+        console.log(typeof t , typeof f);
+
+
+        //假空
+        var n = null;
+        console.log(typeof null);  //obejct 对象
+
+        //变量  instanceof(实列属于什么类型)(判断自定义数据类型)  类型
+
+        //constructor(创造者)
+        //console.log(n.constructor === null);
+
+        console.log(n === null);
+
+
+        //真空
+        var u = undefined;
+        console.log(typeof u);
+    </script>
+
+    <script>
+        //万能方法
+        //对象.原型(仓库).toString(转变为字符串).借用(变量)
+        //把什么变量转变成字符串类型
+        console.log(Object.prototype.toString.call(u) === "[object Undefined]");
+
+    </script>
+
+</body>
+</html>
