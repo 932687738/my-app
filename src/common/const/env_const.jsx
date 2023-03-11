@@ -1,0 +1,1 @@
+export const dev_url = 'http://47.92.101.231:1404'

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
-import store from './redux/store';
+import store from './redux/store/bas_store';
 import zhCN from 'antd/locale/zh_CN';
 import { ConfigProvider } from 'antd';
 

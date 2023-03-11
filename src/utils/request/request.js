@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { message } from 'antd'
-import store from '../../redux/store'
+import store from 'reduxP/store/bas_store'
+import {dev_url} from 'common/const/env_const'
 let instance = axios.create({
     timeout: 1000,
 })
 if (process.env.NODE_ENV === "development") {
-    instance.defaults.baseURL = "http://47.92.101.231:1404"
+    instance.defaults.baseURL = dev_url
 } else {
     instance.defaults.baseURL = "生产环境地址"
 }

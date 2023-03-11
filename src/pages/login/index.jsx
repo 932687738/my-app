@@ -2,11 +2,13 @@ import React from 'react';
 import './index.css'
 import { Button, Form, Input, Image, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import http from '../../utils/request/request'
-import { connect } from 'react-redux'
+import http from 'utils/request/request'
+import {connect} from 'react-redux'
+import {CACHE_LOGIN_INFO} from 'common/const/redux_const'
 
 function Login(props) {
     const onFinish = (values) => {
+        console.log(__dirname);
         http.post('/sysUser/login', values).then(res => {
             console.log(res);
             if (res.data.code) {
@@ -88,12 +90,10 @@ function Login(props) {
     );
 }
 
-export default connect(() => {
-    return {}
-}, (dispatch) => {
+export default connect((dispatch) => {
     return {
         init_current_user: (user) => {
-            dispatch({ type: 'INIT_CURRENT_USER', user })
+            dispatch({ type: CACHE_LOGIN_INFO, user })
         }
     }
 })(Login);

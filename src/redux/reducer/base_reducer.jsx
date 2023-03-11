@@ -1,20 +1,17 @@
-import { legacy_createStore as createStore } from 'redux'
+import {CACHE_LOGIN_INFO,delete_LOGIN_INFO} from 'common/const/redux_const'
 
 var data = {
-    currentUser: {},
-    currentStep: 0,
-    newCoach: {},
-    currentOrder:{}
+    currentUser: {}
 }
-function reducer(state = data, action) {
+export default function reducer(state = data, action) {
     let newState = JSON.parse(JSON.stringify(state))
     switch (action.type) {
-        case 'INIT_CURRENT_USER':
+        case CACHE_LOGIN_INFO:
             for (const key in action.user) {
                 newState.currentUser[key] = action.user[key];
             }
             return newState;
-        case 'CLEAR_CURRENT_USER':
+        case delete_LOGIN_INFO:
             newState.currentUser = {}
             return newState;
         default:
@@ -22,4 +19,3 @@ function reducer(state = data, action) {
     }
 }
 
-export default createStore(reducer)
