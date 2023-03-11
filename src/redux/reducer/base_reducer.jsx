@@ -10,7 +10,6 @@ export default function reducer(state = data, action) {
         case CACHE_LOGIN_INFO:
             sessionStorage.setItem(CURRENT_USER, JSON.stringify(action.data))
             newState.currentUser = action.data.object
-            console.log(newState)
             return newState;
         case DELETE_LOGIN_INFO:
             newState.currentUser = {}
