@@ -1,23 +1,23 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import './index.css'
 import { Button, Form, Input, Image, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import http from 'utils/request/request'
-import {connect} from 'react-redux'
+import {$requestPost} from 'utils/request/request'
 import {CACHE_LOGIN_INFO} from 'common/const/redux_const'
+import store from 'reduxP/store/bas_store';
 
 function Login(props) {
-    const onFinish = (values) => {
-        console.log(__dirname);
-        http.post('/sysUser/login', values).then(res => {
-            console.log(res);
-            if (res.data.code) {
-                props.init_current_user(res.data.object)
-                sessionStorage.setItem("current_user",JSON.stringify(res.data.object))
-            } else {
-                message.error(res.data.message)
-            }
-        })
+
+    const form = useRef()
+
+    const onFinish = async (values) => {
+         let data = await $requestPost('/sysUser/login',values)
+        if (data.code) {
+            store.dispatch({ type: CACHE_LOGIN_INFO, data })
+        } else {
+            message.error(data.message)
+        }
+        form.current.resetFields()
     };
     const onFinishFailed = (errorInfo) => {
         message.error('请输入正确的账户和密码')
@@ -27,6 +27,7 @@ function Login(props) {
         <div className='login'>
             <Form
                 name="basic"
+                ref={form}
                 labelCol={{
                     span: 8,
                 }}
@@ -90,10 +91,4 @@ function Login(props) {
     );
 }
 
-export default connect((dispatch) => {
-    return {
-        init_current_user: (user) => {
-            dispatch({ type: CACHE_LOGIN_INFO, user })
-        }
-    }
-})(Login);
+export default Login;

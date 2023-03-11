@@ -29,11 +29,10 @@ instance.interceptors.response.use(function (response) {
         alert(response.data.msg)
     }
 
-    return response.status === 200 ? Promise.resolve(response) : Promise.reject(response)
-
+    // return response.status === 200 ? Promise.resolve(response) : Promise.reject(response)
+    return response
 }, function (error) {
     // 当响应状态码为2XX范围之外时,触发此函数,可以在此处对错误进行处理
-    console.log("响应错误", error);
     if (error.response) {
         switch (error.response.status) {
             case 404:
